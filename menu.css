@@ -1,0 +1,714 @@
+@charset "UTF-8";
+@import 'https://fonts.googleapis.com/css?family=Space+Mono';
+
+
+body {
+    background: url(images/background.jpg);
+    background: url(images/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+    width: auto;
+}
+
+#titleMsg {
+    font-family: IBM Plex Sans Arabic;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    transition: 2s ease-in-out;
+}
+
+/* .modesContainer #playervscomputer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+/*box-shadow: [inset?] [top] [left] [blur] [size] [color];*/
+
+#playervscomputer::before,
+#playervscomputer::after {
+    transition: 0.5s ease-in-out;
+    z-index: -1;
+}
+
+#playervscomputer {
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #307d4a;
+    max-width: 255px;
+    height: 80px;
+    background-color: transparent;
+    font-size: 22px;
+    font-family: Space Mono;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+#playervscomputer:before, #playervscomputer:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 80px solid #073d19;
+}
+#playervscomputer:before {
+    right: -50px;
+    border-right: 50px solid transparent;
+    transform: translateX(-100%);
+}
+#playervscomputer:after {
+    left: -50px;
+    border-left: 50px solid transparent;
+    transform: translateX(100%);
+}
+#playervscomputer:hover {
+    color: #c2d9ca;
+}
+#playervscomputer:hover:before {
+    transform: translateX(-40%);
+}
+#playervscomputer:hover:after {
+    transform: translateX(40%);
+}
+
+#playervscomputer:active {
+    transition: 0.3s;
+    top: 170px;
+}
+
+/*Player Vs Player #startButton*/
+/*
+
+
+PLAYER
+
+VS
+
+PLAYER
+
+*/
+#playervsplayer::before,
+#playervsplayer::after {
+    transition: 0.5s ease-in-out;
+    z-index: -1;
+}
+
+#playervsplayer {
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 340px;
+    border: 1px solid #307d4a;
+    max-width: 250px    ;
+    height: 80px;
+    background-color: transparent;
+    font-size: 22px;
+    font-family: Space Mono;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+#playervsplayer:before, #playervsplayer:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 80px solid #073d19;
+}
+#playervsplayer:before {
+    right: -50px;
+    border-right: 50px solid transparent;
+    transform: translateX(-100%);
+}
+#playervsplayer:after {
+    left: -50px;
+    border-left: 50px solid transparent;
+    transform: translateX(100%);
+}
+#playervsplayer:hover {
+    color: #c2d9ca;
+}
+#playervsplayer:hover:before {
+    transform: translateX(-40%);
+}
+#playervsplayer:hover:after {
+    transform: translateX(40%);
+}
+
+#playervsplayer:active {
+    transition: 0.3s;
+    top: 360px;
+}
+
+.menuContainer {
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-align: center;
+}
+
+.menuContainer .fa-xmark{
+    text-align: center;
+}
+
+
+.menuContainer .fa-xmark {
+    width: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.fa-bars {
+    width: 35px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#menuElement {
+    /* background: linear-gradient(rgba(255, 255, 255, 0.1), gray) bottom; */
+    background: transparent;
+    width: 250px;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.fa-xmark {
+    /* ...existing styles... */
+    position: relative;
+    z-index: 10; /* Ensure the X mark appears above the menu */
+}
+
+.fa-bars {
+    position: relative;
+    z-index: 10;
+}
+
+#menu {
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition for the transform property */
+}
+
+#menuElement {
+    /* ...existing styles... */
+    z-index: 1; /* Set a lower z-index for the menu */
+}
+
+
+
+#mainLabel {
+    font-family: Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#menuElement {
+    padding-top: 50px;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: -250px;
+    top: 0;
+    /* background: linear-gradient(cyan, darkcyan) bottom; */
+    background: rgba(255, 255, 255, 0.25);
+    font-family: 'Space Grotesk', sans-serif;
+    z-index: 0;
+    transition: 0.7s;
+}
+
+#menuElement ul li {
+    padding-left: 20px;
+    list-style: none;
+    margin: 10% 1px 0;
+}
+
+#menuElement ul #player,
+#menuElement ul #computer {
+    margin-left: -25px;
+}
+
+#player {
+    position: absolute;
+    top: 315px;
+    padding-left: 0;
+    color: rgb(63, 0, 0);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    padding-left: -20px;
+    font-family: Space Mono;
+    cursor: pointer;
+}
+
+#computer {
+    position: absolute;
+    top: 365px;
+    padding-left: 0;
+    color: rgb(63, 0, 0);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    padding-left: -20px;
+    font-family: Space Mono;
+    cursor: pointer;
+}
+
+#menuElement ul li a {
+    color: rgb(59, 59, 59);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: Space Mono;
+}
+
+#services {
+    font-family: Outfit;
+    font-weight:550;
+    font-size: 24px;
+}
+
+#gamemode {
+    position: absolute;
+    padding-top: 20px;
+    font-family: Outfit;
+    font-size: 23px;
+}
+
+#menuElement ul li a:hover {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+#player:hover a {
+    color: black !important;
+}
+
+#menuElement ul li {
+    transition: 0.20s ease-in-out;
+}
+
+#menuElement ul li:hover {
+    transform: translateY(3px);
+}
+
+#playerNames {
+    max-width: 450px;
+    width: 100%;
+    position: absolute;
+    left: -50%; 
+    transform: translateX(-50%);
+    bottom: 100px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: 1.5s ease-in-out;
+}
+
+#playerNamesTitleMessage {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    position: absolute;
+    top: 25px;
+    left: 22%;
+}
+
+
+
+
+.playerLabels {
+    font-family: Montserrat;
+    font-size: 20px;
+}
+
+#player1Label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-155%);
+    top: 180px;
+}
+
+#player2Label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-155%);
+    top: 270px;
+}
+
+.playerInputs {
+    font-family: Poppins;
+    height: 25px;
+    background-color: #f7f7f7;
+    border: 1.5px solid #f5d7d4;
+    font-size: 18px;
+    width: 55%;
+    border-radius: 5px;
+    transition: 0.5 ease-in-out;
+}
+
+#player1Name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 210px;
+}
+
+#player2Name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 300px;
+}
+
+
+
+.wrapper{
+    position: relative;
+    width: 100%;
+    top: 350px;
+}
+
+#button{
+    font-family: 'Roboto Mono';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 190px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid black;
+    background: #fff;
+    color: #222;
+    border-radius: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .35s ease-in-out;
+}
+
+#button:hover{
+    background: #222;
+    color: #fff;
+}
+
+#button span{
+    opacity: 1;
+    visibility: visible;
+    transition: all .35s;
+}
+
+.success{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .35s;
+}
+
+.success svg{
+    width: 20px;
+    height: 20px;
+    fill: yellowgreen;
+    transform-origin: 50% 50%;
+    transform: translateY(-50%) rotate(0deg) scale(0);
+    transition: all .35s;
+}
+
+#button.is_active{
+    width: 40px;
+    height: 40px;
+}
+
+#button.is_active .success{
+    opacity: 1;
+    visibility: visible;
+}
+
+#button.is_active .success svg{
+    margin-top: 50%;
+    transform: translateY(-50%) rotate(720deg) scale(1);
+}
+
+#button.is_active span{
+    opacity: 0;
+    visibility: hidden;
+}
+
+#x-mark {
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    background: radial-gradient(red, darkred);
+    border-radius: 2px;
+    position: absolute;
+    left: 423px;
+    top: 2px;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+#x-mark:active {
+    transform: scale(0.9);
+}
+
+#x-mark-icon {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+
+.wrapper2 {
+    position: relative;
+    width: 100%;
+    /* 300px 470px */
+    top: 300px;
+}
+
+#button2{
+    font-family: 'Roboto Mono';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 190px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid black;
+    background: #fff;
+    color: #222;
+    border-radius: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .35s ease-in-out;
+}
+
+#button2:hover{
+    background: #222;
+    color: #fff;
+}
+
+#button2 span{
+    opacity: 1;
+    visibility: visible;
+    transition: all .35s;
+}
+
+.success2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .35s;
+}
+
+.success2 svg{
+    width: 20px;
+    height: 20px;
+    fill: yellowgreen;
+    transform-origin: 50% 50%;
+    transform: translateY(-50%) rotate(0deg) scale(0);
+    transition: all .35s;
+}
+
+#button2.is_active_true{
+    width: 40px;
+    height: 40px;
+}
+
+#button2.is_active_true .success2{
+    opacity: 1;
+    visibility: visible;
+}
+
+#button2.is_active_true .success2 svg{
+    margin-top: 50%;
+    transform: translateY(-50%) rotate(720deg) scale(1);
+}
+
+#button2.is_active_true span{
+    opacity: 0;
+    visibility: hidden;
+}
+
+#difficultyLevels {
+    overflow:hidden;
+    max-width: 450px;
+    width: 100%;
+    position: absolute;
+    left: -50%;
+    transform: translateX(-50%);
+    bottom: 100px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: 1.5s ease-in-out;
+    
+}
+
+#difficultyLevelsTitleMessage {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    position: absolute;
+    top: 25px;
+    left: 14%;
+}
+
+.difficultyLevelsplayerInputs {
+    font-family: Poppins;
+    height: 25px;
+    background-color: #f7f7f7;
+    border: 1.5px solid #f5d7d4;
+    font-size: 18px;
+    width: 55%;
+    border-radius: 5px;
+    transition: 0.5 ease-in-out;
+}
+
+.difficultyLevelsplayerLabels {
+    font-family: Montserrat;
+    font-size: 20px;
+}
+#difficultyLevelsplayer1Name {
+    position: absolute;
+    left: 14%;
+    top: 170px;
+}
+
+#difficultyLevelsPlayer1Label {
+    position: absolute;
+    left: 14%;
+    top: 140px;
+}
+
+.dropdown, .textBox {
+    font-family: Poppins;
+}
+
+.dropdown {
+    left: 14%;
+    top: 200px;
+    position: relative;
+    width: 200px;
+    height: 30px;
+}
+
+.textBox {
+    font-size: 15px;
+}
+
+.dropdown::before {
+    content: '';
+    position: absolute;
+    
+    width: 8px;
+    height: 8px;
+    border: 2px solid #333;
+    right: -25px;
+    top: 52%;
+    z-index: 10000;
+    border: 2px solid #333;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(-45deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.dropdown.active::before {
+    top: 22px;
+    transform: rotate(-225deg);
+}
+
+.dropdown input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background: #fff;
+    border: none;
+    outline: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    padding: 12px 20px;
+    border-radius: 10px;
+}
+
+.dropdown .option {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+}
+
+.dropdown.active .option {
+    transition: 0.5s ease;
+    display: block;
+
+}
+
+.dropdown .option div {
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.dropdown .option div:hover {
+    background: #62baea;
+    color: #fff;
+}
+
+#difficultyLevelsDifficulty {
+    position:  absolute;
+    left: 14%;
+    top: 210px;
+}
+
+#x-mark2 {
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    background: radial-gradient(red, darkred);
+    border-radius: 2px;
+    position: absolute;
+    left: 423px;
+    top: 2px;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+#x-mark2:active {
+    transform: scale(0.9);
+}
+
+#x-mark-icon2 {
+    left: 50%;
+    transform: translateX(-50%);
+}

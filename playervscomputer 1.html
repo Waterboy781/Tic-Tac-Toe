@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Tic Tac Toe</title>
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=DM+Mono&family=Exo+2&family=IBM+Plex+Sans+Arabic&family=Inconsolata&family=Lato&family=Montserrat:wght@500&family=Mukta&family=Outfit&family=Poppins:wght@400;500;600&family=Questrial&family=Roboto+Mono&family=Space+Grotesk&family=Ubuntu+Mono&family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="playervscomputer.css">
+    <script src="https://kit.fontawesome.com/62fa5986be.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="titlemsgdiv">
+        <h1>Tic Tac Toe</h1>
+    </div>
+    
+    <div id="winningPlayer" style="display: none;"></div>
+
+    <div id="board">
+
+    </div>
+    <div id="playerChanceLabel"></div>
+    <button id="resetButton">Reset</button>
+    <label id="currentMode"></label>
+    <div class="menuElement" id="menuElement">
+        <nav>
+            <ul>
+                <label class="mainLabel" id="services">Services</label>
+                <li class="sideNavTools"><a href="menu.html">Home</a></li>
+                <li class="sideNavTools"><a href="menu.html">About Us</a></li>
+                <li class="sideNavTools"><a href="menu.html">Contact</a></li>
+                <li class="sideNavTools"><a href="menu.html">Blog</a></li>
+                <label class="mainLabel" id="gamemode">Game Modes</label>
+                <li class="sideNavTools" id="player"><a href="#">Player Vs Computer</a></li>
+                <li class="sideNavTools" id="computer"><a href="#">Player Vs Player</a></li>
+
+            </ul> 
+        </nav>
+    </div>
+    <div class="menuContainer" id="menuContainer">
+        <i class="fa-solid fa-bars" id="menu"></i>
+    </div>
+    <script src="playervscomputer 1.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Tic Tac Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=DM+Mono&family=Exo+2&family=IBM+Plex+Sans+Arabic&family=Inconsolata&family=Lato&family=Montserrat:wght@500&family=Mukta&family=Outfit&family=Poppins:wght@400;500;600&family=Questrial&family=Roboto+Mono&family=Space+Grotesk&family=Ubuntu+Mono&family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="menu.css">
+    <script src="https://kit.fontawesome.com/62fa5986be.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+        <h1 id="titleMsg"></h1>
+    
+    
+    <div class="menuElement" id="menuElement">
+        <nav>
+            <ul>
+                <label class="mainLabel" id="services">Services</label>
+                <li class="sideNavTools"><a href="#">Home</a></li>
+                <li class="sideNavTools"><a href="#">About Us</a></li>
+                <li class="sideNavTools"><a href="#">Contact</a></li>
+                <li class="sideNavTools"><a href="#">Blog</a></li>
+                <label class="mainLabel" id="gamemode">Game Modes</label>
+                <li class="sideNavTools" id="player"><a href="#">Player Vs Computer</a></li>
+                <li class="sideNavTools" id="computer"><a href="#">Player Vs Player</a></li>
+
+            </ul> 
+        </nav>
+    </div>
+    <div class="menuContainer" id="menuContainer">
+        <i class="fa-solid fa-bars" id="menu"></i>
+    </div>
+
+    <div class="modesContainer">
+        <button id="playervscomputer">Player Vs Computer</button>
+        <button id="playervsplayer">Player Vs <br>Player</button>
+    </div>
+    <div class="playerNames" id="playerNames">
+        <h1 id="playerNamesTitleMessage">Player Vs Player</h1>
+        <label id="player1Label" class="playerLabels">Player 1: </label><br>
+        <input id="player1Name" class="playerInputs" placeholder="" type="text"><br>
+        <label id="player2Label" class="playerLabels">Player 2: </label><br>
+        <input id="player2Name" class="playerInputs" placeholder="" type="text">
+        <div class="wrapper">
+            <button class="" id="button">
+                <span>Start The Game</span>
+                <div class="success">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 29.756 29.756" style="enable-background:new 0 0 29.756 29.756;" xml:space="preserve">
+                
+                <path d="M29.049,5.009L28.19,4.151c-0.943-0.945-2.488-0.945-3.434,0L10.172,18.737l-5.175-5.173   c-0.943-0.944-2.489-0.944-3.432,0.001l-0.858,0.857c-0.943,0.944-0.943,2.489,0,3.433l7.744,7.752   c0.944,0.943,2.489,0.943,3.433,0L29.049,8.442C29.991,7.498,29.991,5.953,29.049,5.009z"/>
+                </svg>
+                </div>
+            </button>
+        </div>
+        <div id="x-mark">
+            <i class="fa-solid fa-xmark" id="x-mark-icon"></i>
+        </div>
+    </div>
+    <div class="difficultyLevels" id="difficultyLevels">
+        <h1 id="difficultyLevelsTitleMessage">Player Vs Computer</h1>
+        <label id="difficultyLevelsPlayer1Label" class="difficultyLevelsplayerLabels">Your Name: </label><br>
+        <input id="difficultyLevelsplayer1Name" class="difficultyLevelsplayerInputs" placeholder="" type="text"><br>
+        <label id="difficultyLevelsDifficulty" class="difficultyLevelsplayerLabels">Difficulty:</label>
+        <div class="dropdown" onclick="toggleDropdown()">
+            <input type="text" class="textBox" placeholder="Select Difficulty" readonly>
+            <div class="option">
+                <div onclick="show('Easy')">Easy</div>
+                <div onclick="show('Medium')">Medium</div>
+                <div onclick="show('Hard')">Hard</div>
+                <div onclick="show('Extreme')">Extreme</div>
+            </div>
+        </div>
+        <div class="wrapper2">
+            <button class="" id="button2">
+                <span>Start The Game</span>
+                <div class="success2">
+                <svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"  viewBox="0 0 29.756 29.756" style="enable-background:new 0 0 29.756 29.756;" xml:space="preserve">
+                
+                <path d="M29.049,5.009L28.19,4.151c-0.943-0.945-2.488-0.945-3.434,0L10.172,18.737l-5.175-5.173   c-0.943-0.944-2.489-0.944-3.432,0.001l-0.858,0.857c-0.943,0.944-0.943,2.489,0,3.433l7.744,7.752   c0.944,0.943,2.489,0.943,3.433,0L29.049,8.442C29.991,7.498,29.991,5.953,29.049,5.009z"/>
+                </svg>
+                </div>
+            </button>
+        </div>
+        <div id="x-mark2">
+            <i class="fa-solid fa-xmark" id="x-mark-icon2"></i>
+        </div>
+    </div>
+    <script src="menu.js"></script>
+</body>
+</html>

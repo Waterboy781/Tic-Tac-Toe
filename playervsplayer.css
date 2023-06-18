@@ -1,0 +1,629 @@
+@charset "UTF-8";
+@import 'https://fonts.googleapis.com/css?family=Space+Mono';
+
+
+#titlemsgdiv {
+    padding-bottom: 55px;
+}
+
+h1 {
+    position: absolute;
+    top: -20px;
+    text-align: center;;
+    width: 200px;
+    font-family: Montserrat;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1.5px solid #222;
+}
+
+
+#board {
+    width: 420px;
+    height: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 33px;
+}
+
+.tile {
+    font-family: IBM Plex Sans Arabic;
+    width: 137px;
+    height: 137px;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.horizontal-line {
+    border-bottom: 3px solid black;
+}
+
+.vertical-line {
+    border-right: 3px solid black;
+}
+
+.winner {
+    background-color: lightgray;
+    color: red;
+}
+
+#resetButton {
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    background-color: #fff;
+    color: #222;
+    border: 1px solid #222;
+    top: 90%;
+    padding: 15px 30px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #222;
+    left: 50%;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    transition: none;
+}
+
+#resetButton{
+    -webkit-transition: ease 1s;
+    -moz-transition: ease 1s;
+    transition: ease 1s;
+}
+/* #resetButton:hover {
+    background-color: #222;
+    color: #fff;
+} */
+
+#resetButton:hover {
+    color: #fff;
+    box-shadow: inset 400px 0 0 0 #222;
+    
+}
+
+#resetButton:active {
+    transition: 0.1s ease-in-out;
+    top: 91.5%;
+}
+
+#playerChanceLabel {
+    font-family: Work Sans;
+    font-size: 18px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#startLabel {
+    font-family: Work Sans;
+    font-size: 25px;
+    padding-top: 30px;
+}
+
+#winningPlayer {
+    font-family: Work Sans;
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 88%;
+}
+
+#startButton {
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    background-color: #fff;
+    color: #222;
+    border: 1px solid #222;
+    top: 90%;
+    padding: 15px 30px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #222;
+    left: 50%;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    transition: none;
+}
+
+#startButton{
+    -webkit-transition: ease 1s;
+    -moz-transition: ease 1s;
+    transition: ease 1s;
+}
+/* #resetButton:hover {
+    background-color: #222;
+    color: #fff;
+} */
+
+#startButton:hover {
+    color: #fff;
+    box-shadow: inset 400px 0 0 0 #222;
+    
+}
+
+#startButton:active {
+    transition: 0.1s ease-in-out;
+    top: 91.5%;
+}
+
+#currentMode {
+    font-family: Roboto Mono;
+    position: absolute;
+    left: 88%;
+    bottom: 0;
+}
+
+
+
+
+body {
+    background: url(images/background.jpg);
+    background: url(images/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+
+/* .modesContainer #playervscomputer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+/*box-shadow: [inset?] [top] [left] [blur] [size] [color];*/
+
+#playervscomputer::before,
+#playervscomputer::after {
+    transition: 0.5s ease-in-out;
+    z-index: -1;
+}
+
+#playervscomputer {
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #307d4a;
+    max-width: 255px;
+    height: 80px;
+    background-color: transparent;
+    font-size: 22px;
+    font-family: Space Mono;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+#playervscomputer:before, #playervscomputer:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 80px solid #073d19;
+}
+#playervscomputer:before {
+    right: -50px;
+    border-right: 50px solid transparent;
+    transform: translateX(-100%);
+}
+#playervscomputer:after {
+    left: -50px;
+    border-left: 50px solid transparent;
+    transform: translateX(100%);
+}
+#playervscomputer:hover {
+    color: #c2d9ca;
+}
+#playervscomputer:hover:before {
+    transform: translateX(-40%);
+}
+#playervscomputer:hover:after {
+    transform: translateX(40%);
+}
+
+#playervscomputer:active {
+    transition: 0.3s;
+    top: 170px;
+}
+
+/*Player Vs Player #startButton*/
+/*
+
+
+PLAYER
+
+VS
+
+PLAYER
+
+*/
+#playervsplayer::before,
+#playervsplayer::after {
+    transition: 0.5s ease-in-out;
+    z-index: -1;
+}
+
+#playervsplayer {
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 340px;
+    border: 1px solid #307d4a;
+    max-width: 250px    ;
+    height: 80px;
+    background-color: transparent;
+    font-size: 22px;
+    font-family: Space Mono;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+#playervsplayer:before, #playervsplayer:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-bottom: 80px solid #073d19;
+}
+#playervsplayer:before {
+    right: -50px;
+    border-right: 50px solid transparent;
+    transform: translateX(-100%);
+}
+#playervsplayer:after {
+    left: -50px;
+    border-left: 50px solid transparent;
+    transform: translateX(100%);
+}
+#playervsplayer:hover {
+    color: #c2d9ca;
+}
+#playervsplayer:hover:before {
+    transform: translateX(-40%);
+}
+#playervsplayer:hover:after {
+    transform: translateX(40%);
+}
+
+#playervsplayer:active {
+    transition: 0.3s;
+    top: 360px;
+}
+
+.menuContainer {
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-align: center;
+}
+
+.menuContainer .fa-xmark{
+    text-align: center;
+}
+
+
+.menuContainer .fa-xmark {
+    width: 30px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.fa-bars {
+    width: 35px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#menuElement {
+    /* background: linear-gradient(rgba(255, 255, 255, 0.1), gray) bottom; */
+    background: transparent;
+    width: 250px;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.3s ease-in-out;
+}
+
+.fa-xmark {
+    /* ...existing styles... */
+    position: relative;
+    z-index: 10; /* Ensure the X mark appears above the menu */
+}
+
+.fa-bars {
+    position: relative;
+    z-index: 10;
+}
+
+#menu {
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition for the transform property */
+}
+
+#menuElement {
+    /* ...existing styles... */
+    z-index: 1; /* Set a lower z-index for the menu */
+}
+
+
+
+#mainLabel {
+    font-family: Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#menuElement {
+    padding-top: 50px;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    left: -250px;
+    top: 0;
+    /* background: linear-gradient(cyan, darkcyan) bottom; */
+    background: rgba(255, 255, 255, 0.25);
+    font-family: 'Space Grotesk', sans-serif;
+    z-index: 0;
+    transition: 0.7s;
+}
+
+#menuElement ul li {
+    padding-left: 20px;
+    list-style: none;
+    margin: 10% 1px 0;
+    margin-right: 100px;
+}
+
+#menuElement ul #player,
+#menuElement ul #computer {
+    margin-left: -25px;
+}
+
+#player {
+    position: absolute;
+    top: 315px;
+    color: rgb(63, 0, 0);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    padding-left: -20px;
+    font-family: Space Mono;
+    width: 200px;
+    cursor: pointer;
+}
+
+#computer {
+    position: absolute;
+    top: 365px;
+    width: 180px;
+    color: rgb(63, 0, 0);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    padding-left: -20px;
+    font-family: Space Mono;
+    cursor: pointer;
+}
+
+#menuElement ul li a {
+    color: rgb(59, 59, 59);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: Space Mono;
+}
+
+#services {
+    font-family: Outfit;
+    font-weight:550;
+    font-size: 24px;
+    padding-right: 122px;
+}
+
+#gamemode {
+    position: absolute;
+    padding-top: 20px;
+    font-family: Outfit;
+    font-size: 23px;
+}
+
+#menuElement ul li a:hover {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+#player:hover a {
+    color: black !important;
+}
+
+#menuElement ul li {
+    transition: 0.20s ease-in-out;
+}
+
+#menuElement ul li:hover {
+    transform: translateY(3px);
+}
+
+#playerNames {
+    max-width: 450px;
+    width: 100%;
+    position: absolute;
+    left: -850px; 
+    bottom: 18px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: 1.5s ease-in-out;
+}
+
+#playerNamesTitleMessage {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    position: absolute;
+    top: 25px;
+    left: 22%;
+}
+
+
+.playerLabels {
+    font-family: Montserrat;
+    font-size: 20px;
+}
+
+#player1Label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-155%);
+    top: 180px;
+}
+
+#player2Label {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-155%);
+    top: 270px;
+}
+
+.playerInputs {
+    font-family: Poppins;
+    height: 25px;
+    background-color: #f7f7f7;
+    border: 1.5px solid #f5d7d4;
+    font-size: 18px;
+    width: 55%;
+    border-radius: 5px;
+    transition: 0.5 ease-in-out;
+}
+
+#player1Name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 210px;
+}
+
+#player2Name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 300px;
+}
+
+
+
+.wrapper{
+    position: relative;
+    width: 100%;
+    top: 350px;
+}
+
+#button{
+    font-family: 'Roboto Mono';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 190px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid black;
+    background: #fff;
+    color: #222;
+    border-radius: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: .35s ease-in-out;
+}
+
+#button:hover{
+    background: #222;
+    color: #fff;
+}
+
+#button span{
+    opacity: 1;
+    visibility: visible;
+    transition: all .35s;
+}
+
+.success{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .35s;
+}
+
+.success svg{
+    width: 20px;
+    height: 20px;
+    fill: yellowgreen;
+    transform-origin: 50% 50%;
+    transform: translateY(-50%) rotate(0deg) scale(0);
+    transition: all .35s;
+}
+
+#button.is_active{
+    width: 40px;
+    height: 40px;
+}
+
+#button.is_active .success{
+    opacity: 1;
+    visibility: visible;
+}
+
+#button.is_active .success svg{
+    margin-top: 50%;
+    transform: translateY(-50%) rotate(720deg) scale(1);
+}
+
+#button.is_active span{
+    opacity: 0;
+    visibility: hidden;
+}
+
+#x-mark {
+    width: 25px;
+    height: 25px;
+    font-size: 25px;
+    background: radial-gradient(red, darkred);
+    border-radius: 2px;
+    position: absolute;
+    left: 423px;
+    top: 2px;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+
+#x-mark:active {
+    transform: scale(0.9);
+}
+
+#x-mark-icon {
+    left: 50%;
+    transform: translateX(-50%);
+}
