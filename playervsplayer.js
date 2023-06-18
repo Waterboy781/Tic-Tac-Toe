@@ -32,19 +32,6 @@ var players = {
 }
 
 
-function changeChance() {
-  if(players["symbol"] === playerX) {
-    players["symbol"] = playerO;
-  } else {
-    players["symbol"] === playerX;
-  }
-
-  if(players["name"] === name1) {
-    players["name"] = name2;
-  } else {
-    players["name"] = name1;
-  }
-}
 
 
 console.log(players);
@@ -189,11 +176,17 @@ array.forEach(element => {
         board[2][2] = currPlayer;
       }
       displayArray(board);
-      changeChance();
+      if(currPlayer === 'O') {
+        currPlayerName = playerOName;
+      } else {
+        currPlayerName = playerXName;
+      }
       if(restartButton.disabled === true) {
         restartButton.disabled = false;
       }
       if (checkWinner(currPlayer)) {
+        
+        
         winningPlayer.style.display = 'block';
         winningPlayer.innerHTML = `${currPlayerName} Wins!`
         playerChanceLabel.innerHTML = 'Game Over'
@@ -268,7 +261,6 @@ try {
 } catch (error) {
   // Handle the error
 }
-
 
 
 

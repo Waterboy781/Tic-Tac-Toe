@@ -159,8 +159,11 @@ submitButton.addEventListener('click', function() {
     localStorage.setItem('playerTwoName', name2);
     console.log(name1)
     console.log(name2);
-    player1Name.value = '';
-    player2Name.value = '';
+    setTimeout(function() {
+        player1Name.value = '';
+        player2Name.value = '';
+    }, 2400)
+    
 });
 
 
