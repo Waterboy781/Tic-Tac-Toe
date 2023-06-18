@@ -201,7 +201,7 @@ PLAYER
 }
 
 #menu {
-    transition: transform 0.3s ease-in-out; /* Add a smooth transition for the transform property */
+    transition: transform 0.4s ease-in-out; /* Add a smooth transition for the transform property */
 }
 
 #menuElement {
@@ -223,10 +223,10 @@ PLAYER
     left: -250px;
     top: 0;
     /* background: linear-gradient(cyan, darkcyan) bottom; */
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.6);
     font-family: 'Space Grotesk', sans-serif;
     z-index: 0;
-    transition: 0.7s;
+    transition: 0.7s ease-in-out;
 }
 
 #menuElement ul li {
@@ -700,7 +700,7 @@ PLAYER
     background: radial-gradient(red, darkred);
     border-radius: 2px;
     position: absolute;
-    left: 423px;    
+    left: 94%;    
     top: 2px;
     cursor: pointer;
     transition: 0.1s ease-in;
@@ -716,7 +716,7 @@ PLAYER
 }
 
 @media(max-width: 500px) {
-    #titleMsg {
+    #titleMsg { 
         font-size: 40px;
     }
     #x-mark2 i{
@@ -727,13 +727,10 @@ PLAYER
         text-align: center;
         bottom: 1px;
     }
-    #playerNames #x-mark {
-        transform: translateX(-240%);
+    #x-mark {
+        left: 93%;  
     }
-    #difficultyLevels #x-mark2 {
-        transform: translateX(-240%);
+    #x-mark2 {
+        left: 93%;  
     }
-    #difficultyLevels {
-        transition: 1.5s ease-in-out;
-    }
-}
+} 

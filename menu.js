@@ -123,7 +123,7 @@ btn.onclick = function() {
 let xmark = document.getElementById('x-mark');
 
 xmark.addEventListener('click', function() {
-    playerNames.style.left = '-850px';
+    playerNames.style.left = '-50%';
     xmarkOpen = false;
     changeOpacity(xmarkOpen);
 })
@@ -193,7 +193,7 @@ xmark2.addEventListener('click', function() {
 
 playervscomputer.addEventListener('click', function() {
     if(difficultyLevelsOpen) {
-        difficultyLevels.style.left = '-60%';
+        difficultyLevels.style.left = '-50%';
         difficultyLevelsOpen = false;
         changeOpacity(difficultyLevelsOpen);
     } else {
