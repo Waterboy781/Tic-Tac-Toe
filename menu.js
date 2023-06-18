@@ -186,13 +186,14 @@ var difficultyLevels = document.getElementById('difficultyLevels')
 var difficultyLevelsOpen = false;
 var xmark2 = document.getElementById('x-mark2');
 xmark2.addEventListener('click', function() {
-    
-    difficultyLevels.style.left = '-50%'
+    difficultyLevelsOpen = false;
+    difficultyLevels.style.left = '-50%';
+    changeOpacity();
 })
 
 playervscomputer.addEventListener('click', function() {
     if(difficultyLevelsOpen) {
-        difficultyLevels.style.left = '-50%';
+        difficultyLevels.style.left = '-60%';
         difficultyLevelsOpen = false;
         changeOpacity(difficultyLevelsOpen);
     } else {
