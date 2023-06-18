@@ -146,7 +146,7 @@ array.forEach(element => {
     
             // Make the computer's move after a short delay
             
-            setTimeout(makeComputerMove, 500);
+            setTimeout(makeComputerMove, 800);
         }
       }
     });

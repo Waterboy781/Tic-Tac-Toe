@@ -2,8 +2,7 @@ var textBox = document.querySelector('.textBox');
 var difficultyLevelsplayer1Name = document.getElementById('difficultyLevelsplayer1Name');
 var screenWidth = document.documentElement.clientWidth;
 var xmarkOpen = false;
-let player1Name = document.getElementById('player1Name');
-let player2Name = document.getElementById('player2Name');
+
 if (screenWidth >= 280) {
     var titleMsg = document.getElementById('titleMsg');
     try {
@@ -139,22 +138,31 @@ function changeOpacity(element) {
     }
 }
 
-
+const player1Name = document.querySelector('.playerNames #player1Name');
+const player2Name = document.querySelector('.playerNames #player2Name');
 
 let submitButton = document.getElementById("button");
-
+let name1, name2;
 submitButton.addEventListener('click', function() {
-  
-  let name1 = player1Name.value;
-  let name2 = player2Name.value;
-  if(name1 === '') {
-      name1 = 'Player 1';
-  } else if(name2 === '') {
-      name2 = 'Player 2';
-  }
-  localStorage.setItem('Player1Name', name1);
-  localStorage.setItem('Player2Name', name2);
+    name1 = player1Name.value;
+    name2 = player2Name.value;
+    
+    if (name1 === '') {
+        name1 = 'Player 1';
+    }
+    
+    if (name2 === '') {
+        name2 = 'Player 2';
+    }
+    
+    localStorage.setItem('playerOneName', name1);
+    localStorage.setItem('playerTwoName', name2);
+    console.log(name1)
+    console.log(name2);
+    player1Name.value = '';
+    player2Name.value = '';
 });
+
 
 function show(anything) {
     document.querySelector('.textBox').value = anything;

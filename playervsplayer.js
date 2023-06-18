@@ -10,8 +10,8 @@ let winningPlayer = document.getElementById('winningPlayer');
 var currentMode = document.getElementById('currentMode');
 currentMode.style.fontStyle = 'italic';
 currentMode.innerHTML = 'Player vs Player';
-name1 = localStorage.getItem('Player1Name');
-name2 = localStorage.getItem('Player2Name');
+name1 = localStorage.getItem('playerOneName');
+name2 = localStorage.getItem('playerTwoName');
 nameArray = [name1, name2];
 var y = Math.random();
 if (y < 0.5)
@@ -26,8 +26,32 @@ if(playerOName === name1) {
   playerXName = name1;
 }
 
-var randomIndex = Math.floor(Math.random() * 2);
+var players = { 
+  "symbol": currPlayer,
+  "name": currPlayerName
+}
 
+
+function changeChance() {
+  if(players["symbol"] === playerX) {
+    players["symbol"] = playerO;
+  } else {
+    players["symbol"] === playerX;
+  }
+
+  if(players["name"] === name1) {
+    players["name"] = name2;
+  } else {
+    players["name"] = name1;
+  }
+}
+
+
+console.log(players);
+
+var randomIndex = Math.floor(Math.random() * 2);
+console.log(playerOName);
+console.log(playerXName);
 
 
 
@@ -133,7 +157,6 @@ array = [
 
 
 
-
 array.forEach(element => {
   
   
@@ -142,6 +165,7 @@ array.forEach(element => {
 
     
     if(element.innerHTML === '') {
+      
       element.innerHTML = currPlayer;
       element.style.cursor = 'not-allowed';
       var var1 = element.id;
@@ -165,17 +189,11 @@ array.forEach(element => {
         board[2][2] = currPlayer;
       }
       displayArray(board);
-      if(currPlayer === 'O') {
-        currPlayerName = playerOName;
-      } else {
-        currPlayerName = playerXName;
-      }
+      changeChance();
       if(restartButton.disabled === true) {
         restartButton.disabled = false;
       }
       if (checkWinner(currPlayer)) {
-        
-        
         winningPlayer.style.display = 'block';
         winningPlayer.innerHTML = `${currPlayerName} Wins!`
         playerChanceLabel.innerHTML = 'Game Over'
@@ -216,7 +234,6 @@ array.forEach(element => {
   
 });
   
-
 try {
   restartButton.addEventListener('click', function() {
     array.forEach(element => {
@@ -230,23 +247,21 @@ try {
     displayArray(board);
 
     // Randomize player names and symbols
-    var randomIndex = Math.floor(Math.random() * 2);
-    list = ['X', 'O']
-    playerOName = nameArray[randomIndex];
-    playerXName = nameArray[1 - randomIndex];
+    
     localStorage.setItem('Player1Name', playerOName);
     localStorage.setItem('Player2Name', playerXName);
-    if(playerOName === name1) {
-      currPlayerName = name2;
-      playerChanceLabel.innerHTML = `${playerOName}'s (O) Chance`;
-    } else {
-      currPlayerName = name1;
-      playerChanceLabel.innerHTML = `${playerOName}'s (O) Chance`;
+
+    // Update current player name and label
+    if(currPlayerName === playerXName && currPlayer === playerX) {
+      currPlayerName = playerXName;
+    } else if(currPlayerName === playerOName && currPlayer === playerO){
+      currPlayerName = playerOName;
     }
+    playerChanceLabel.innerHTML = `${currPlayerName}'s (${currPlayer}) Chance`;
 
     array.forEach(e => {
       e.style.cursor = 'pointer';
-    })
+    });
     gameOver = false;
     winningPlayer.innerHTML = '';
   });

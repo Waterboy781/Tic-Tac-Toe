@@ -5,7 +5,7 @@ let winningPlayer = document.getElementById('winningPlayer');
 var currentMode = document.getElementById('currentMode');
 currentMode.style.fontStyle = 'italic';
 currentMode.innerHTML = 'Player vs Computer (Extreme)';
-currentMode.style.left = '82%'
+currentMode.style.left = '80.2%'
 const playerO = 'O';
 const playerX = 'X';
 let currPlayer = playerO;
@@ -148,7 +148,7 @@ array.forEach(element => {
           playerChanceLabel.innerHTML = `${currPlayerName}'s (X) Chance`;
   
           // Make the computer's move after a short delay
-          setTimeout(makeComputerMove, 500);
+          setTimeout(makeComputerMove, 800);
           
         }
       }

@@ -5,7 +5,7 @@ let winningPlayer = document.getElementById('winningPlayer');
 var currentMode = document.getElementById('currentMode');
 currentMode.style.fontStyle = 'italic';
 currentMode.innerHTML = 'Player vs Computer (Hard)';
-currentMode.style.left = '84%'
+currentMode.style.left = '82.3%'
 const playerO = 'O';
 const playerX = 'X';
 let currPlayer = playerO;
@@ -148,7 +148,7 @@ array.forEach(element => {
     
             // Make the computer's move after a short delay
             
-            setTimeout(makeComputerMove, 500);
+            setTimeout(makeComputerMove, 800);
         }
       }
     });
