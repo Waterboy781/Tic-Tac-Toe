@@ -751,4 +751,9 @@ PLAYER
         font-size: 1.9em;
     }
 
+    #player1Name, #player2Name {
+        left: 50%;
+        transform: translateX(-76%);
+    }
+
 } 
