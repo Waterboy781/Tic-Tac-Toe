@@ -5,7 +5,6 @@ let winningPlayer = document.getElementById('winningPlayer');
 var currentMode = document.getElementById('currentMode');
 currentMode.style.fontStyle = 'italic';
 currentMode.innerHTML = 'Player vs Computer (Medium)';
-currentMode.style.left = '80.7%'
 const playerO = 'O';
 const playerX = 'X';
 let currPlayer = playerO;
@@ -194,10 +193,103 @@ function checkWinner(player) {
       }
     }
     if (hasWon) {
+      animationVar = combination;
+      flashingAnimation(animationVar);
       return true;
     }
   }
   return false;
+}
+
+
+function flashingAnimation(combination) {
+  var elements = [];
+  console.log(combination);
+  for (var i = 0; i < combination.length; i++) {
+    var rowIndex = combination[i][0];
+    var columnIndex = combination[i][1];
+    var elementId = rowIndex + '-' + columnIndex;
+
+    // Store the elements in an array
+    elements.push(elementId);
+  }
+  Animation(elements);
+}
+
+function Animation(elementsList) {
+  const fadeOutDuration = 400; // Duration for fading out in milliseconds
+  const blankDuration = 100; // Duration for keeping the symbols blank in milliseconds
+  const fadeInDuration = 400; // Duration for fading in in milliseconds
+  const repeatCount = 3; // Number of repetitions
+
+  const element1 = document.getElementById(elementsList[0]);
+  const element2 = document.getElementById(elementsList[1]);
+  const element3 = document.getElementById(elementsList[2]);
+
+  const originalContent1 = element1.innerText;
+  const originalContent2 = element2.innerText;
+  const originalContent3 = element3.innerText;
+
+  let repetition = 0;
+  e1 = document.getElementById(elementsList[0]);
+  e2 = document.getElementById(elementsList[1]);
+  e3 = document.getElementById(elementsList[2]);
+  animate();
+
+  function animate() {
+
+    if (repetition < repeatCount) {
+      // Clear existing content
+      e1.innerHTML = '';
+      e2.innerHTML = '';
+      e3.innerHTML = '';
+
+      // Create fade element for text
+      const fadeElement1 = document.createElement('span');
+      const fadeElement2 = document.createElement('span');
+      const fadeElement3 = document.createElement('span');
+
+      fadeElement1.innerText = originalContent1;
+      fadeElement2.innerText = originalContent2;
+      fadeElement3.innerText = originalContent3;
+
+      // Append fade element
+      element1.appendChild(fadeElement1);
+      element2.appendChild(fadeElement2);
+      element3.appendChild(fadeElement3);
+
+      // Animate fade out
+      fadeElement1.classList.add('fade-out');
+      fadeElement2.classList.add('fade-out');
+      fadeElement3.classList.add('fade-out');
+
+      setTimeout(function () {
+        // Set symbols to blank
+        fadeElement1.innerText = '';
+        fadeElement2.innerText = '';
+        fadeElement3.innerText = '';
+
+        // Animate fade in
+        fadeElement1.classList.remove('fade-out');
+        fadeElement2.classList.remove('fade-out');
+        fadeElement3.classList.remove('fade-out');
+
+        fadeElement1.classList.add('fade-in');
+        fadeElement2.classList.add('fade-in');
+        fadeElement3.classList.add('fade-in');
+
+        setTimeout(function () {
+          // Restore original symbols
+          element1.innerHTML = originalContent1;
+          element2.innerHTML = originalContent2;
+          element3.innerHTML = originalContent3;
+
+          repetition++;
+          animate();
+        }, fadeInDuration);
+      }, fadeOutDuration + blankDuration);
+    }
+  }
 }
 
 function isBoardFull() {

@@ -27,6 +27,8 @@ h1 {
     padding-top: 33px;
 }
 
+
+
 .tile {
     font-family: IBM Plex Sans Arabic;
     width: 137px;
@@ -56,7 +58,7 @@ h1 {
     background-color: #fff;
     color: #222;
     border: 1px solid #222;
-    top: 90%;
+    top: 86.5%;
     padding: 15px 30px;
     font-weight: 100;
     letter-spacing: 1px;
@@ -89,7 +91,7 @@ h1 {
 
 #resetButton:active {
     transition: 0.1s ease-in-out;
-    top: 91.5%;
+    top: 88.5%;
 }
 
 #playerChanceLabel {
@@ -160,7 +162,9 @@ h1 {
 #currentMode {
     font-family: Roboto Mono;
     position: absolute;
-    left: 87%;
+    font-size: 12px;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 0;
 }
 
@@ -632,4 +636,27 @@ PLAYER
     #menuElement {
         background: rgba(255, 255, 255, 0.6);
     }
+
+    #board {
+        width: 360px;
+        height: 360px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 33px;
+    }
+
+
+
+    .tile {
+        font-family: IBM Plex Sans Arabic;
+        width: 117px;
+        height: 117px;
+        font-size: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
 } 
+
+
