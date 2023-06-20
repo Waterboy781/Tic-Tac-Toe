@@ -733,4 +733,22 @@ PLAYER
     #x-mark2 {
         left: 93%;  
     }
+    #playerNames {
+        width: 90%;
+    }
+
+    #playerNamesTitleMessage {
+        left: 15%;
+        font-size: 1.9em;
+    }
+
+    #difficultyLevels {
+        width: 90%
+    }
+
+    #difficultyLevelsTitleMessage {
+        left: 7%;
+        font-size: 1.9em;
+    }
+
 } 
