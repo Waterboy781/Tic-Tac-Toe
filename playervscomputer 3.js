@@ -239,10 +239,10 @@ function flashingAnimation(combination) {
 
 function Animation(elementsList) {
   
-  const fadeOutDuration = 400; // Duration for fading out in milliseconds
-  const blankDuration = 100; // Duration for keeping the symbols blank in milliseconds
-  const fadeInDuration = 400; // Duration for fading in in milliseconds
-  const repeatCount = 3; // Number of repetitions
+  const fadeOutDuration = 300; // Duration for fading out in milliseconds
+  const blankDuration = 50; // Duration for keeping the symbols blank in milliseconds
+  const fadeInDuration = 300; // Duration for fading in in milliseconds
+  const repeatCount = 2; // Number of repetitions
 
   const element1 = document.getElementById(elementsList[0]);
   const element2 = document.getElementById(elementsList[1]);
