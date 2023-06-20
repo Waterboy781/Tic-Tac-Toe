@@ -49,7 +49,8 @@ body {
     transition: 0.5s ease-in-out;
 }
 
-#playervscomputer:before, #playervscomputer:after {
+#playervscomputer:before,
+#playervscomputer:after {
     content: "";
     position: absolute;
     top: 0;
@@ -58,22 +59,27 @@ body {
     left: 0;
     border-bottom: 80px solid #073d19;
 }
+
 #playervscomputer:before {
     right: -50px;
     border-right: 50px solid transparent;
     transform: translateX(-100%);
 }
+
 #playervscomputer:after {
     left: -50px;
     border-left: 50px solid transparent;
     transform: translateX(100%);
 }
+
 #playervscomputer:hover {
     color: #c2d9ca;
 }
+
 #playervscomputer:hover:before {
     transform: translateX(-40%);
 }
+
 #playervscomputer:hover:after {
     transform: translateX(40%);
 }
@@ -108,7 +114,7 @@ PLAYER
     transform: translateX(-50%);
     top: 340px;
     border: 1px solid #307d4a;
-    max-width: 250px    ;
+    max-width: 250px;
     height: 80px;
     background-color: transparent;
     font-size: 22px;
@@ -117,7 +123,8 @@ PLAYER
     transition: 0.5s ease-in-out;
 }
 
-#playervsplayer:before, #playervsplayer:after {
+#playervsplayer:before,
+#playervsplayer:after {
     content: "";
     position: absolute;
     top: 0;
@@ -126,22 +133,27 @@ PLAYER
     left: 0;
     border-bottom: 80px solid #073d19;
 }
+
 #playervsplayer:before {
     right: -50px;
     border-right: 50px solid transparent;
     transform: translateX(-100%);
 }
+
 #playervsplayer:after {
     left: -50px;
     border-left: 50px solid transparent;
     transform: translateX(100%);
 }
+
 #playervsplayer:hover {
     color: #c2d9ca;
 }
+
 #playervsplayer:hover:before {
     transform: translateX(-40%);
 }
+
 #playervsplayer:hover:after {
     transform: translateX(40%);
 }
@@ -159,7 +171,7 @@ PLAYER
     text-align: center;
 }
 
-.menuContainer .fa-xmark{
+.menuContainer .fa-xmark {
     text-align: center;
 }
 
@@ -191,7 +203,8 @@ PLAYER
 .fa-xmark {
     /* ...existing styles... */
     position: relative;
-    z-index: 10; /* Ensure the X mark appears above the menu */
+    z-index: 10;
+    /* Ensure the X mark appears above the menu */
     padding-top: 1px;
 }
 
@@ -201,12 +214,14 @@ PLAYER
 }
 
 #menu {
-    transition: transform 0.4s ease-in-out; /* Add a smooth transition for the transform property */
+    transition: transform 0.4s ease-in-out;
+    /* Add a smooth transition for the transform property */
 }
 
 #menuElement {
     /* ...existing styles... */
-    z-index: 1; /* Set a lower z-index for the menu */
+    z-index: 1;
+    /* Set a lower z-index for the menu */
 }
 
 
@@ -276,7 +291,7 @@ PLAYER
 
 #services {
     font-family: Outfit;
-    font-weight:550;
+    font-weight: 550;
     font-size: 24px;
 }
 
@@ -308,7 +323,7 @@ PLAYER
     max-width: 450px;
     width: 100%;
     position: absolute;
-    left: -50%; 
+    left: -50%;
     transform: translateX(-50%);
     bottom: 19px;
     height: 600px;
@@ -352,7 +367,8 @@ PLAYER
     background-color: #f7f7f7;
     border: 1.5px solid #f5d7d4;
     font-size: 18px;
-    width: 55%;
+    max-width: 55%;
+    width: 100%;
     border-radius: 5px;
     transition: 0.5 ease-in-out;
 }
@@ -373,13 +389,13 @@ PLAYER
 
 
 
-.wrapper{
+.wrapper {
     position: relative;
     width: 100%;
     top: 350px;
 }
 
-#button{
+#button {
     font-family: 'Roboto Mono';
     position: absolute;
     top: 50%;
@@ -398,18 +414,18 @@ PLAYER
     transition: .35s ease-in-out;
 }
 
-#button:hover{
+#button:hover {
     background: #222;
     color: #fff;
 }
 
-#button span{
+#button span {
     opacity: 1;
     visibility: visible;
     transition: all .35s;
 }
 
-.success{
+.success {
     position: absolute;
     top: 0;
     left: 0;
@@ -423,7 +439,7 @@ PLAYER
     transition: all .35s;
 }
 
-.success svg{
+.success svg {
     width: 20px;
     height: 20px;
     fill: yellowgreen;
@@ -432,22 +448,22 @@ PLAYER
     transition: all .35s;
 }
 
-#button.is_active{
+#button.is_active {
     width: 40px;
     height: 40px;
 }
 
-#button.is_active .success{
+#button.is_active .success {
     opacity: 1;
     visibility: visible;
 }
 
-#button.is_active .success svg{
+#button.is_active .success svg {
     margin-top: 50%;
     transform: translateY(-50%) rotate(720deg) scale(1);
 }
 
-#button.is_active span{
+#button.is_active span {
     opacity: 0;
     visibility: hidden;
 }
@@ -485,7 +501,7 @@ PLAYER
     top: 300px;
 }
 
-#button2{
+#button2 {
     font-family: 'Roboto Mono';
     position: absolute;
     top: 50%;
@@ -504,18 +520,18 @@ PLAYER
     transition: .35s ease-in-out;
 }
 
-#button2:hover{
+#button2:hover {
     background: #222;
     color: #fff;
 }
 
-#button2 span{
+#button2 span {
     opacity: 1;
     visibility: visible;
     transition: all .35s;
 }
 
-.success2{
+.success2 {
     position: absolute;
     top: 0;
     left: 0;
@@ -529,7 +545,7 @@ PLAYER
     transition: all .35s;
 }
 
-.success2 svg{
+.success2 svg {
     width: 20px;
     height: 20px;
     fill: yellowgreen;
@@ -538,28 +554,28 @@ PLAYER
     transition: all .35s;
 }
 
-#button2.is_active_true{
+#button2.is_active_true {
     width: 40px;
     height: 40px;
 }
 
-#button2.is_active_true .success2{
+#button2.is_active_true .success2 {
     opacity: 1;
     visibility: visible;
 }
 
-#button2.is_active_true .success2 svg{
+#button2.is_active_true .success2 svg {
     margin-top: 50%;
     transform: translateY(-50%) rotate(720deg) scale(1);
 }
 
-#button2.is_active_true span{
+#button2.is_active_true span {
     opacity: 0;
     visibility: hidden;
 }
 
 #difficultyLevels {
-    overflow:hidden;
+    overflow: hidden;
     max-width: 450px;
     width: 100%;
     position: absolute;
@@ -569,7 +585,7 @@ PLAYER
     height: 600px;
     background: rgba(255, 255, 255, 0.9);
     transition: 1.5s ease-in-out;
-    
+
 }
 
 #difficultyLevelsTitleMessage {
@@ -594,6 +610,7 @@ PLAYER
     font-family: Montserrat;
     font-size: 20px;
 }
+
 #difficultyLevelsplayer1Name {
     position: absolute;
     left: 14%;
@@ -606,7 +623,8 @@ PLAYER
     top: 140px;
 }
 
-.dropdown, .textBox {
+.dropdown,
+.textBox {
     font-family: Poppins;
 }
 
@@ -625,7 +643,7 @@ PLAYER
 .dropdown::before {
     content: '';
     position: absolute;
-    
+
     width: 8px;
     height: 8px;
     border: 2px solid #333;
@@ -688,7 +706,7 @@ PLAYER
 }
 
 #difficultyLevelsDifficulty {
-    position:  absolute;
+    position: absolute;
     left: 14%;
     top: 210px;
 }
@@ -700,7 +718,7 @@ PLAYER
     background: radial-gradient(red, darkred);
     border-radius: 2px;
     position: absolute;
-    left: 94%;    
+    left: 94%;
     top: 2px;
     cursor: pointer;
     transition: 0.1s ease-in;
@@ -715,24 +733,29 @@ PLAYER
     transform: translateX(-50%);
 }
 
-@media(max-width: 500px) {
-    #titleMsg { 
+@media(max-width: 450px) {
+    #titleMsg {
         font-size: 40px;
     }
-    #x-mark2 i{
+
+    #x-mark2 i {
         text-align: center;
         bottom: 1px;
     }
-    #x-mark i{
+
+    #x-mark i {
         text-align: center;
         bottom: 1px;
     }
+
     #x-mark {
-        left: 93%;  
+        left: 93%;
     }
+
     #x-mark2 {
-        left: 93%;  
+        left: 93%;
     }
+
     #playerNames {
         width: 90%;
     }
@@ -751,9 +774,18 @@ PLAYER
         font-size: 1.9em;
     }
 
-    #player1Name, #player2Name {
+    #player1Name,
+    #player2Name {
         left: 50%;
-        transform: translateX(-76%);
+        transform: translateX(-60%);
+
     }
 
-} 
+}
+
+@media(width <= 449px) {
+    #player1Name,
+    #player2Name {
+        width: 50%;
+    }
+}
